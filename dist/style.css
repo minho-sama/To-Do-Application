@@ -1,0 +1,107 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header{
+    background-color: rgb(39, 103, 240);
+    color:white;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+#grid{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 729px;
+    background-color: rgb(33, 55, 82); 
+}
+
+/* SIDEBAR*/
+
+#sidebar{
+    grid-column: 1;
+    background-color: white;
+    text-align: center;
+    position:relative;
+}
+
+#projectForm{
+    position:absolute;
+    top: 60px;
+    width: 100%;
+}
+
+#projectForm input{
+    padding: 5px;
+    border: 2px solid black;
+    background: white;
+    font-family: inherit;
+    display:block;
+    width: 90%;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#projectSubmit:hover{
+    background: rgb(7, 214, 7);
+    color:white;
+}
+
+#projectDelete:hover{
+    background: crimson;
+    color:white;
+}
+
+
+/*TODO LIST*/
+
+
+#todos{
+    grid-column: 2;
+    color:white;
+    text-align: center;
+    position:relative;
+}
+
+#addItem{
+    font-size: 40px;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    border: 2px solid rgb(26, 128, 223);
+    background: white;
+    transition: all .2s ease-in-out;
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#addItem:hover{
+    transform: scale(1.3);
+}
+
+#popUpForm{
+    width: 350px;
+    height: 500px;
+    display:block;
+    border: 5px solid black;
+    border-radius: 5px;
+    margin:auto;
+    background-color:white;
+    color:black;
+}
+
+#popUpForm input{
+    width: 90%;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+}

@@ -14,3 +14,38 @@ function myFunction() {
       x.style.display = "none";
     }
   } */}
+
+
+const addBtn = document.querySelector('#addItem')
+const popUpForm = document.querySelector('#popUpForm')
+
+addBtn.addEventListener('click', function(){
+    if (popUpForm.style.display === 'none'){
+        addBtn.value = 'x'
+        popUpForm.style.display = 'block'
+    }
+    else{
+        addBtn.value = '+'
+        popUpForm.style.display = 'none'
+    }
+
+})
+
+
+
+
+// addBtn.addEventListener('click', ()=>{
+//     const popUpForm = document.querySelector('#popUpForm')
+//     if (popUpForm.style.display === 'none') {
+//         popUpForm.style.display = 'block' 
+//     }
+// })
+
+// function openCurry() {
+//     document.querySelector("#curry-pop").style.display = "block";
+//   }
+
+//   function closeCurry() {
+//     document.querySelector("#curry-pop").style.display = "none";
+//   }
+

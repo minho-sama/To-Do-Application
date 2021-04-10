@@ -41,7 +41,6 @@ header{
 #projectForm input{
     padding: 5px;
     border: 2px solid black;
-    background: white;
     font-family: inherit;
     display:block;
     width: 90%;
@@ -49,13 +48,24 @@ header{
     border-radius: 5px;
 }
 
-#projectSubmit:hover{
+#projectSubmit{
     background: rgb(7, 214, 7);
     color:white;
 }
 
-#projectDelete:hover{
+#projectSubmit:hover{
+    background: rgb(7, 145, 7);
+    color:white;
+}
+
+
+#projectDelete{
     background: crimson;
+    color:white;
+}
+
+#projectDelete:hover{
+    background: rgb(161, 6, 37);
     color:white;
 }
 
@@ -84,13 +94,14 @@ header{
 }
 
 #addItem:hover{
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
+
+/* POPUPFORM*/
 
 #popUpForm{
     width: 350px;
     height: 500px;
-    display:block;
     border: 5px solid black;
     border-radius: 5px;
     margin:auto;
@@ -100,8 +111,38 @@ header{
 
 #popUpForm input{
     width: 90%;
-    margin: 15px;
+    margin: 12px;
     padding: 5px;
     border-radius: 5px;
     border: 2px solid black;
 }
+
+#descriptionBox{
+    height: 100px;
+}
+
+#popUpBtns{
+    margin: 0px;
+    padding: 0px;
+}
+
+#popUpBtns input:nth-child(1){
+    background: rgb(42, 187, 42);
+    color:white;
+}
+
+#popUpBtns input:nth-child(2){
+    background:crimson;
+    color:white;
+}
+
+#popUpBtns input:nth-child(1):hover{
+    background: rgb(26, 134, 26);
+    color:white;
+}
+
+#popUpBtns input:nth-child(2):hover{
+    background:rgb(168, 3, 36);
+    color:white;
+}
+

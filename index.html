@@ -24,18 +24,28 @@
                 <h1>My Tasks</h1>
                 <input id = "addItem" type = button value = "+">
                 
-                <div id = "popUpForm">
+                <div id = "popUpForm" style = "display:none">
 
                     <h1>New To-Do</h1>
 
                     <label for = "todoName">Type To-Do name:</label>
                     <input id = "todoName" type = "textbox" placeholder = "To-Do name">
 
-                    <label for = "todoName">Type To-Do name:</label>
-                    <input id = "todoName" type = "textbox" placeholder = "To-Do name">
+                    <label for = "dateSet">Due Date:</label>
+                    <input id = "dateSet" type = "date">
 
-                    <label for = "todoName">Type To-Do name:</label>
-                    <input id = "todoName" type = "textbox" placeholder = "To-Do name">
+                    <label for = "descriptionBox">Description:</label>
+                    <input id = "descriptionBox" type = "textbox" placeholder = "Add description">
+
+                    <!-- <div id = 'priorityField'>
+                        <label for = "priorityBox">Mark as important: </label>
+                        <input id = 'priorityBox' type = 'checkbox' value = 'false'>
+                    </div> -->
+
+                    <div id = "popUpBtns">
+                        <input id = "submitTask" type = "submit" value = 'Add Task'>
+                        <input id = "cancelTask" type = "submit" value = "Cancel">
+                    </div>
 
                 </div>
         </div>

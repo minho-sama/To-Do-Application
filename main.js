@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector("#addItem"),l=document.querySelector("#popUpForm");e.addEventListener("click",(function(){"none"===l.style.display?(e.value="x",l.style.display="block"):(e.value="+",l.style.display="none")}))})();

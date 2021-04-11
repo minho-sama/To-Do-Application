@@ -30,6 +30,7 @@ header{
     background-color: white;
     text-align: center;
     position:relative;
+    
 }
 
 #projectForm{
@@ -41,7 +42,8 @@ header{
 #projectForm input{
     padding: 5px;
     border: 2px solid black;
-    font-family: inherit;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 20px;
     display:block;
     width: 90%;
     margin: 5px;
@@ -49,8 +51,9 @@ header{
 }
 
 #projectSubmit{
-    background: rgb(7, 214, 7);
+    background: rgb(7, 190, 7);
     color:white;
+    transition: 0.1s;
 }
 
 #projectSubmit:hover{
@@ -60,14 +63,42 @@ header{
 
 
 #projectDelete{
-    background: crimson;
+    background: rgb(206, 22, 59);
     color:white;
+    transition: 0.1s;
 }
 
 #projectDelete:hover{
     background: rgb(161, 6, 37);
     color:white;
 }
+
+#projectList{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 35px;
+    width: 70%;
+    position: absolute;
+    top: 170px;
+}
+#projectList div{
+    text-align: start;
+    margin: 15px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#projectList div:hover{
+    background-color: rgb(39, 103, 240);
+    color:white;
+    border-radius: 8px;
+}
+
+.activeProject{
+    background-color: rgb(39, 103, 240);
+    color:white;
+    border-radius: 8px;
+}
+
 
 
 /*TODO LIST*/
@@ -91,10 +122,38 @@ header{
     position:absolute;
     top: 15px;
     right: 15px;
+    transition: 0.1s;
 }
 
 #addItem:hover{
     transform: scale(1.2);
+}
+
+/*todos*/
+#tasksContainer{
+    margin: 70px;
+
+}
+#tasksContainer div{
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    background-color: white;
+    color:black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: start;
+    transition: 0.1s;
+}
+
+#tasksContainer div:hover{
+    background-color: rgb(240, 238, 238);
+}
+
+.deleteTask{
+    float:right;
+    font-size: 20px;
+    color:rgb(207, 28, 28);
 }
 
 /* POPUPFORM*/
@@ -104,9 +163,12 @@ header{
     height: 500px;
     border: 5px solid black;
     border-radius: 5px;
-    margin:auto;
     background-color:white;
     color:black;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    position: relative;
+    bottom: 460px;
+    left: 350px;
 }
 
 #popUpForm input{
@@ -119,6 +181,7 @@ header{
 
 #descriptionBox{
     height: 100px;
+    text-align: start;
 }
 
 #popUpBtns{
@@ -129,11 +192,13 @@ header{
 #popUpBtns input:nth-child(1){
     background: rgb(42, 187, 42);
     color:white;
+    transition: 0.1s;
 }
 
 #popUpBtns input:nth-child(2){
     background:crimson;
     color:white;
+    transition: 0.1s;
 }
 
 #popUpBtns input:nth-child(1):hover{

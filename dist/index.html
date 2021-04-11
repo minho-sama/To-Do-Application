@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do-App</title>
     <link rel = 'stylesheet' href = 'style.css'></style>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
 </head>
 <body>
     <header><h1>To-Do App</h1></header>
@@ -18,12 +19,27 @@
                 <input id = "projectSubmit" type = "submit" value = "Add Project">
                 <input id = "projectDelete" type = "submit" value = "Delete Project">
             </form>
+            <ul id = 'projectList'>
+                
+            </ul>
+
         </div>
 
         <div id = 'todos'>
                 <h1>My Tasks</h1>
                 <input id = "addItem" type = button value = "+">
                 
+                <div id = "tasksContainer">
+
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non, asperiores eveniet nobis minus quis vero. Tenetur unde earum sit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas doloremque dolorum impedit laborum sapiente saepe quasi expedita ducimus delectus unde. <span class = 'deleteTask'>x</span>
+                    </div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non, asperiores eveniet nobis minus quis vero. Tenetur unde earum sit! <span class = 'deleteTask'>x</span></div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non, asperiores eveniet nobis minus quis vero. Tenetur unde earum sit! <span class = 'deleteTask'>x</span></div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non, asperiores eveniet nobis minus quis vero. Tenetur unde earum sit! <span class = 'deleteTask'>x</span></div>
+    
+                </div>
+
                 <div id = "popUpForm" style = "display:none">
 
                     <h1>New To-Do</h1>
@@ -44,10 +60,11 @@
 
                     <div id = "popUpBtns">
                         <input id = "submitTask" type = "submit" value = 'Add Task'>
-                        <input id = "cancelTask" type = "submit" value = "Cancel">
+                        <input id = "cancelTask" type = "submit" value = "Discard">
                     </div>
 
                 </div>
+
         </div>
 
 

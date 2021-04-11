@@ -1,51 +1,20 @@
-//popup a todo-hoz
+import { popUp, changeActive, projectHandling, appendProjects, addDataToProjects, showProjects} from "./dom";
 
-{/* <button onclick="myFunction()">Click Me</button>
+if (localStorage.hasOwnProperty('projects') == false){
+    let defaultProjects = JSON.stringify(['Your Project'])
+    localStorage.setItem('projects', defaultProjects)
+}
 
-<div id="myDIV">
-  This is my DIV element.
-</div>
-
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  } */}
-
-
-const addBtn = document.querySelector('#addItem')
-const popUpForm = document.querySelector('#popUpForm')
-
-addBtn.addEventListener('click', function(){
-    if (popUpForm.style.display === 'none'){
-        addBtn.value = 'x'
-        popUpForm.style.display = 'block'
-    }
-    else{
-        addBtn.value = '+'
-        popUpForm.style.display = 'none'
-    }
-
-})
+popUp()
+projectHandling()
+appendProjects()
+changeActive()
+addDataToProjects()
 
 
 
-
-// addBtn.addEventListener('click', ()=>{
-//     const popUpForm = document.querySelector('#popUpForm')
-//     if (popUpForm.style.display === 'none') {
-//         popUpForm.style.display = 'block' 
-//     }
+// localStorage.setItem('getProject', function(index){
+//     localStorage.getItem('projects')
 // })
 
-// function openCurry() {
-//     document.querySelector("#curry-pop").style.display = "block";
-//   }
-
-//   function closeCurry() {
-//     document.querySelector("#curry-pop").style.display = "none";
-//   }
-
+showProjects()

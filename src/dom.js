@@ -1,3 +1,6 @@
+import {filterByProject, removeByProject} from "./loadTodos"
+import {showDescription} from "./todoHandling"
+
 //popup
 const addBtn = document.querySelector('#addItem')
 
@@ -30,33 +33,45 @@ function projectHandling(){
 
     if (localStorage.hasOwnProperty('projects')){
         projects = JSON.parse(localStorage.getItem('projects'))
+        
+        console.log(localStorage.projects)
     }
 
     submitBtn.addEventListener('click', function(){
-        if (nameField.value === ""){
-            alert('please name your project!')
-        }
-        else{
+        if (nameField.value !== ""){
             projects.push(nameField.value)
             let projects_serialized = JSON.stringify(projects)
             localStorage.setItem('projects', projects_serialized)
         }
 
         nameField.value = ""
+
     })
 
-        //delete project from list and from storage (not including tasks)
-        deleteBtn.addEventListener('click', function(){
-            let deleteThis = document.querySelector('.activeProject')
-            deleteThis.parentNode.removeChild(deleteThis);
-    
-            let projectArray = JSON.parse(localStorage.getItem('projects'))
-            projectArray.splice(deleteThis.dataset.index, 1)
-    
-            let projectArray_serialized = JSON.stringify(projectArray)
-            localStorage.setItem("projects", projectArray_serialized)
-    
-        })
+    //delete all the tasks from localStorage that is in the selected project
+    deleteBtn.addEventListener('click', function(){
+        let deleteThis = document.querySelector('.activeProject')
+        let filteredArray = removeByProject(deleteThis.textContent)
+        let filteredArray_serialized = JSON.stringify(filteredArray)
+        localStorage.setItem('allTasks', filteredArray_serialized)
+    })
+
+    //delete project name from list and from storage
+    deleteBtn.addEventListener('click', function(){
+        let deleteThis = document.querySelector('.activeProject')
+        deleteThis.parentNode.removeChild(deleteThis);
+
+        let projectArray = JSON.parse(localStorage.getItem('projects'))
+        projectArray.splice(deleteThis.dataset.index, 1)
+
+        let projectArray_serialized = JSON.stringify(projectArray)
+        localStorage.setItem("projects", projectArray_serialized)
+
+        //delete UI 
+        document.querySelector('#tasksContainer').innerHTML = ""
+
+    })
+
 
 }
 
@@ -71,6 +86,36 @@ function appendProjects(){
         projectList.appendChild(name)
     })
 
+}
+
+//load projects on click
+function loadProjects (){
+    const projectList = document.querySelectorAll("#projectList div")
+    projectList.forEach(project => {
+        project.addEventListener('click', function(event){
+            document.querySelector('#tasksContainer').innerHTML = ""
+            let folderName = event.target.textContent
+
+            //prevent error message on console.log
+            if (localStorage.hasOwnProperty('allTasks')){
+                let arrayOfTasks = filterByProject(folderName)
+                arrayOfTasks.forEach(task => {
+                    let todo = document.createElement('div')
+                    todo.classList.add('taskTodo')
+                    todo.innerHTML = `
+                    <h3 class = 'taskTitle'> ${task.title} </h3> 
+                    <p class = 'taskDate'>Expires: ${task.date}</p>
+                    <input type = button class = 'delBtn' value = 'x'></input>
+                    <input type = button class = 'expandBtn' value = '...'></input>
+                    `
+                    document.querySelector('#tasksContainer').appendChild(todo)
+
+                //addDescription eventListener
+                showDescription()
+            })
+            }
+        })
+    })
 }
 
 //animation for selecting project
@@ -89,6 +134,26 @@ function changeActive (){
     })
 }
 
+//validation form
+const submitBtn = document.querySelector('#projectSubmit')
+submitBtn.addEventListener('click', function(){
+    const nameField = document.querySelector('#projectName')
+    if (nameField.value !== ""){
+        alertBox('Project added!', 'success-msg')
+    }
+    else{
+        alertBox('please name your project!', 'alert-msg')
+    }
+})
+
+function alertBox(message, classname){
+    let div = document.createElement('div')
+    div.classList.add(classname)
+    div.textContent = message
+    document.querySelector('header').appendChild(div)
+    setTimeout(()=> document.querySelector('header').removeChild(div), 2000);
+}
+
 function addDataToProjects (){
     const projectList = document.querySelectorAll('#projectList div');
     projectList.forEach((project, i) => project.setAttribute('data-index', i))
@@ -97,5 +162,4 @@ function addDataToProjects (){
 function showProjects(){
     console.log(projects)
 }
-
-export {popUp, projectHandling, appendProjects, changeActive, showProjects, addDataToProjects}
+export {popUp, projectHandling, appendProjects, changeActive, showProjects, addDataToProjects, alertBox, loadProjects}

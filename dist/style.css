@@ -14,7 +14,40 @@ header{
     padding: 5px;
     width: 100%;
     text-align: center;
+    position:relative;
 }
+
+#card{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    transition: 0.5s;
+}
+#card:hover{
+    text-decoration: underline;
+}
+
+/*validation*/
+.alert-msg, .success-msg{
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    text-align:center;
+    width: 200px;
+    padding: 10px;
+    background-color: rgb(209, 16, 55);
+    border-radius: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+}
+
+.success-msg{
+    background-color: rgb(7, 190, 7);
+}
+/**/
 
 #grid{
     display:grid;
@@ -75,10 +108,10 @@ header{
 
 #projectList{
     font-family:'Courier New', Courier, monospace;
-    font-size: 35px;
-    width: 70%;
+    font-size: 25px;
+    width: 80%;
     position: absolute;
-    top: 170px;
+    top: 200px;
 }
 #projectList div{
     text-align: start;
@@ -144,30 +177,97 @@ header{
     width: 90%;
     text-align: start;
     transition: 0.1s;
+    position:relative;
 }
 
 #tasksContainer div:hover{
-    background-color: rgb(240, 238, 238);
+    background-color: rgb(252, 248, 248);
+}
+.delBtn, .expandBtn{
+    /* float: right; */
+    border: none;
+    font-size: 18px;
+    color: rgb(192, 19, 54);
+    background:white;
+}
+.delBtn{
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.expandBtn{
+    position:absolute;
+    right: 35px;
+    bottom: 10px;
 }
 
-.deleteTask{
-    float:right;
+.delBtn:hover, .expandBtn:hover{
+    color:white;
+    background: rgb(192, 19, 54);
+}
+
+.taskTitle{
+    width:max-content;
+    margin: 0px;
+}
+
+.taskDate{
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+    margin:0px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*description popup*/
+
+.descriptionBox{
+    position: absolute;
+    bottom: 200px;
+    left: 350px;
+    background-color:white;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    border: 6px solid black;
+    width: 400px;
+    height: 300px;
+    color:black;
+    text-align: left;
+    padding: 20px;
+
+}
+
+.delDescription{
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
     font-size: 20px;
-    color:rgb(207, 28, 28);
+    color:white;
+    background: rgb(192, 19, 54);
+    
+}
+
+.dateDescription{
+    /* float:right; */
+    position:absolute;
+    bottom: 0px;
+    right: 20px;
 }
 
 /* POPUPFORM*/
 
 #popUpForm{
-    width: 350px;
-    height: 500px;
-    border: 5px solid black;
+    /* width: 350px;
+    height: 500px; */
+    width: 400px;
+    height: 510px;
+    border: 7px solid black;
     border-radius: 5px;
     background-color:white;
     color:black;
     font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    position: relative;
-    bottom: 460px;
+    position: absolute;
+    bottom: 100px;
     left: 350px;
 }
 

@@ -197,6 +197,7 @@ header{
     font-size: 18px;
     color: rgb(192, 19, 54);
     background:white;
+    border-radius: 2px;
 }
 .delBtn{
     position:absolute;
@@ -211,7 +212,7 @@ header{
 
 .delBtn:hover, .expandBtn:hover{
     color:white;
-    background: rgb(192, 19, 54);
+    background: rgb(146, 14, 41);
 }
 
 .taskTitle{

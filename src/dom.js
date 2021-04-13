@@ -112,7 +112,7 @@ function loadProjects (){
 
                 //addDescription eventListener
                 showDescription()
-                //add delete event
+                //addDelete
                 addDeleteEvent()
             })
             }

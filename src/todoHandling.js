@@ -1,10 +1,10 @@
 import {alertBox} from "./dom"
-import {filterByProject, targetOneTask, filterByTitle} from "./loadTodos"
+import {filterByTitle, filterByProject, targetOneTask} from "./loadTodos"
 
 //add todo to localStorage
 const submitBtn = document.querySelector('#submitTask')
 
-function addTodo(){
+function addTodo(/*lehet majd úgy kéne h ide rakni a project foldert*/ ){
     const todoName = document.querySelector('#todoName')
     const todoDate = document.querySelector('#dateSet')
     const todoDescription = document.querySelector('#descriptionBox')
@@ -75,6 +75,7 @@ function loadProjectsFromPopUp(){
 
                 //addDescription eventListener
                 showDescription()
+                //add Delete event
                 addDeleteEvent()
             })  
         }
@@ -191,6 +192,8 @@ function addDeleteEvent(){
         )
     })
 }
+            
+
 
 //ipadben benne van
 // function showDescription2(){

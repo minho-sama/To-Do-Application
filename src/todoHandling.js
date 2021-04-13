@@ -1,5 +1,5 @@
 import {alertBox} from "./dom"
-import {filterByProject, targetOneTask} from "./loadTodos"
+import {filterByProject, targetOneTask, filterByTitle} from "./loadTodos"
 
 //add todo to localStorage
 const submitBtn = document.querySelector('#submitTask')
@@ -75,6 +75,7 @@ function loadProjectsFromPopUp(){
 
                 //addDescription eventListener
                 showDescription()
+                addDeleteEvent()
             })  
         }
     })
@@ -149,6 +150,48 @@ function showDescription(){
 
 }
 
+function addDeleteEvent(){
+
+    const delBtns = document.querySelectorAll('.delBtn')
+    delBtns.forEach(button => {
+        button.addEventListener('click', function(event){
+            // let project = document.querySelector('.activeProject').textContent
+            //remove from local storage
+            let parent = event.target.closest('div')
+            let title = parent.querySelector('.taskTitle').textContent.trim()
+            let filteredAllTasks = filterByTitle(title)
+            let filteredAllTasks_serialized = JSON.stringify(filteredAllTasks)
+            localStorage.setItem('allTasks', filteredAllTasks_serialized)
+
+                //load tasks again to refresh dom
+                if (localStorage.hasOwnProperty('allTasks')){
+                    document.querySelector('#tasksContainer').innerHTML = ""
+                    let folderName = document.querySelector('.activeProject').textContent
+            
+                    let arrayOfTasks = filterByProject(folderName)
+                    arrayOfTasks.forEach(task => {
+                    let todo = document.createElement('div')
+                    todo.classList.add('taskTodo')
+                    todo.innerHTML = `
+                    <h3 class = 'taskTitle'> ${task.title} </h3> 
+                    <p class = 'taskDate'>Expires: ${task.date}</p>
+                    <input type = button class = 'delBtn' value = 'x'></input>
+                    <input type = button class = 'expandBtn' value = '...'></input>
+                    `
+                    document.querySelector('#tasksContainer').appendChild(todo)
+            
+                        // //addDescription eventListener
+                        showDescription()
+                        // //add Delete event
+                        addDeleteEvent()
+                    })
+                }
+
+        }
+        )
+    })
+}
+
 //ipadben benne van
 // function showDescription2(){
 
@@ -184,6 +227,6 @@ function showDescription(){
 //     })})
 
 
-export {showDescription, discardTask, addTodo, loadProjectsFromPopUp}
+export {showDescription, discardTask, addTodo, loadProjectsFromPopUp, addDeleteEvent}
             //showDescription2
 

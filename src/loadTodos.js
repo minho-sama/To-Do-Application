@@ -25,10 +25,15 @@ function filterByProject(project){
     //ezután majd még stringify és setItem()!
 }
 
+function filterByTitle(title){
+    let allTasks = JSON.parse(localStorage.getItem("allTasks"))
+    return allTasks.filter(task => task.title !== title)
+}
+
 function removeByProject(project){
     let allTasks = JSON.parse(localStorage.allTasks) 
     return allTasks.filter(task => task.project !== project )
     //ezután stringify és setItem()!
 }
 
-export {filterByProject, removeByProject, removeOneTaskLocalStorage, targetOneTask}
+export {filterByProject, removeByProject, removeOneTaskLocalStorage, targetOneTask, filterByTitle}

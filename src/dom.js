@@ -1,5 +1,5 @@
 import {filterByProject, removeByProject} from "./loadTodos"
-import {showDescription} from "./todoHandling"
+import {addDeleteEvent, showDescription} from "./todoHandling"
 
 //popup
 const addBtn = document.querySelector('#addItem')
@@ -112,6 +112,8 @@ function loadProjects (){
 
                 //addDescription eventListener
                 showDescription()
+                //add delete event
+                addDeleteEvent()
             })
             }
         })

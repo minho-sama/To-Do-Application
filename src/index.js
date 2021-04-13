@@ -1,5 +1,5 @@
 import { popUp, changeActive, projectHandling, appendProjects, showProjects, addDataToProjects, loadProjects} from "./dom";
-import {showDescription, discardTask, addTodo, loadProjectsFromPopUp} from "./todoHandling"
+import {showDescription, discardTask, addTodo, loadProjectsFromPopUp, addDeleteEvent} from "./todoHandling"
 
 if (localStorage.hasOwnProperty('projects') == false){
     let defaultProjects = JSON.stringify(['Your Project'])
@@ -20,6 +20,7 @@ addTodo()
 loadProjects()
 
 loadProjectsFromPopUp()
+addDeleteEvent()
 
 
 // localStorage.setItem('getProject', function(index){

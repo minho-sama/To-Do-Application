@@ -70,6 +70,7 @@ header{
     position:absolute;
     top: 60px;
     width: 100%;
+    left: 15px;
 }
 
 #projectForm input{
@@ -78,15 +79,20 @@ header{
     font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     font-size: 20px;
     display:block;
-    width: 90%;
+    /* width: 90%; */
     margin: 5px;
     border-radius: 5px;
+}
+
+#projectName{
+    width: 86%;
 }
 
 #projectSubmit{
     background: rgb(7, 190, 7);
     color:white;
     transition: 0.1s;
+    width: 90%;
 }
 
 #projectSubmit:hover{
@@ -99,6 +105,7 @@ header{
     background: rgb(206, 22, 59);
     color:white;
     transition: 0.1s;
+    width: 90%;
 }
 
 #projectDelete:hover{
@@ -117,7 +124,7 @@ header{
     text-align: start;
     margin: 15px;
     padding: 10px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 #projectList div:hover{
@@ -176,13 +183,14 @@ header{
     border-radius: 10px;
     width: 90%;
     text-align: start;
-    transition: 0.1s;
+    transition: 0.2s;
     position:relative;
 }
 
 #tasksContainer div:hover{
-    background-color: rgb(252, 248, 248);
-}
+    background-color: rgb(184, 16, 49);
+} 
+
 .delBtn, .expandBtn{
     /* float: right; */
     border: none;

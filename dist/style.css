@@ -89,27 +89,27 @@ header{
 }
 
 #projectSubmit{
-    background: rgb(7, 190, 7);
+    background: rgb(10, 173, 10);
     color:white;
     transition: 0.1s;
     width: 90%;
 }
 
 #projectSubmit:hover{
-    background: rgb(7, 145, 7);
+    background: rgb(21, 196, 21);
     color:white;
 }
 
 
 #projectDelete{
-    background: rgb(206, 22, 59);
+    background: rgb(204, 20, 57);
     color:white;
     transition: 0.1s;
     width: 90%;
 }
 
 #projectDelete:hover{
-    background: rgb(161, 6, 37);
+    background: rgb(235, 18, 61);
     color:white;
 }
 

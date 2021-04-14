@@ -154,7 +154,7 @@ function showImage(){
     const tasks = document.querySelector('#tasksContainer')
     if (tasks.innerHTML == ""){
         let image = document.createElement('img')
-        image.setAttribute('src', "https://i.imgur.com/LQHT1aN.png")
+        image.setAttribute('src', "https://i.imgur.com/7PPCrBN.png")
         image.classList.add('placeHolder-img')
         tasks.appendChild(image)
     }

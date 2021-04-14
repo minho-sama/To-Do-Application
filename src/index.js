@@ -24,9 +24,5 @@ loadProjects()
 loadProjectsFromPopUp()
 addDeleteEvent()
 
-
-// localStorage.setItem('getProject', function(index){
-//     localStorage.getItem('projects')
-// })
 showProjects()
 console.table(localStorage)

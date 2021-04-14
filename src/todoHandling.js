@@ -1,4 +1,4 @@
-import {alertBox} from "./dom"
+import {alertBox, showImage} from "./dom"
 import {filterByTitle, filterByProject, targetOneTask} from "./loadTodos"
 
 //add todo to localStorage
@@ -14,6 +14,9 @@ function addTodo(/*lehet majd úgy kéne h ide rakni a project foldert*/ ){
     submitBtn.addEventListener('click', function(){
         let activeFolder = document.querySelector('.activeProject')
             //read after refresh, before submitting new todo to the same project
+                    
+        //set default date today (cannot be overwritten) and todoDate === "" is false lol
+        // todoDate.valueAsDate = new Date();
 
         if (localStorage.hasOwnProperty('allTasks')){
             taskList = JSON.parse(localStorage.getItem('allTasks'))
@@ -181,10 +184,12 @@ function addDeleteEvent(){
                     `
                     document.querySelector('#tasksContainer').appendChild(todo)
             
-                        // //addDescription eventListener
+                        //addDescription eventListener
                         showDescription()
-                        // //add Delete event
+                        //add Delete event
                         addDeleteEvent()
+                        //addImage
+                        showImage()
                     })
                 }
 

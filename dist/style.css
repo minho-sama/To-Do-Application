@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
 body{
     font-family:'Courier New', Courier, monospace;
     margin: 0px;
@@ -6,6 +8,10 @@ body{
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.placeHolder-img{
+    width: 40vw;
 }
 
 header{
@@ -76,7 +82,7 @@ header{
 #projectForm input{
     padding: 5px;
     border: 2px solid black;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-family:'Roboto','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     font-size: 20px;
     display:block;
     /* width: 90%; */
@@ -114,12 +120,13 @@ header{
 }
 
 #projectList{
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Roboto Mono', 'Courier New', Courier, monospace;
     font-size: 25px;
     width: 80%;
     position: absolute;
     top: 200px;
 }
+
 #projectList div{
     text-align: start;
     margin: 15px;
@@ -226,7 +233,7 @@ header{
     right: 100px;
     bottom: 10px;
     margin:0px;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Roboto Mono','Courier New', Courier, monospace;
 }
 
 /*description popup*/

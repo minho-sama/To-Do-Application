@@ -115,6 +115,8 @@ function loadProjects (){
                 //addDelete
                 addDeleteEvent()
             })
+                //add image
+                showImage()
             }
         })
     })
@@ -148,6 +150,16 @@ submitBtn.addEventListener('click', function(){
     }
 })
 
+function showImage(){
+    const tasks = document.querySelector('#tasksContainer')
+    if (tasks.innerHTML == ""){
+        let image = document.createElement('img')
+        image.setAttribute('src', "https://i.imgur.com/LQHT1aN.png")
+        image.classList.add('placeHolder-img')
+        tasks.appendChild(image)
+    }
+}
+
 function alertBox(message, classname){
     let div = document.createElement('div')
     div.classList.add(classname)
@@ -164,4 +176,4 @@ function addDataToProjects (){
 function showProjects(){
     console.log(projects)
 }
-export {popUp, projectHandling, appendProjects, changeActive, showProjects, addDataToProjects, alertBox, loadProjects}
+export {popUp, projectHandling, appendProjects, changeActive, showProjects, addDataToProjects, alertBox, loadProjects, showImage}

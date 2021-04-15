@@ -99,6 +99,7 @@ header{
     color:white;
     transition: 0.1s;
     width: 90%;
+    cursor:pointer;
 }
 
 #projectSubmit:hover{
@@ -112,6 +113,7 @@ header{
     color:white;
     transition: 0.1s;
     width: 90%;
+    cursor:pointer;
 }
 
 #projectDelete:hover{
@@ -125,6 +127,7 @@ header{
     width: 80%;
     position: absolute;
     top: 200px;
+    cursor:pointer;
 }
 
 #projectList div{
@@ -170,6 +173,7 @@ header{
     top: 15px;
     right: 15px;
     transition: 0.1s;
+    cursor: pointer;
 }
 
 #addItem:hover{
@@ -205,6 +209,7 @@ header{
     color: rgb(192, 19, 54);
     background:white;
     border-radius: 2px;
+    cursor: pointer;
 }
 .delBtn{
     position:absolute;
@@ -261,6 +266,7 @@ header{
     font-size: 20px;
     color:white;
     background: rgb(192, 19, 54);
+    cursor:pointer;
     
 }
 
@@ -326,6 +332,9 @@ header{
 #popUpBtns input:nth-child(2):hover{
     background:rgb(168, 3, 36);
     color:white;
+}
+#cancelTask, #submitTask{
+    cursor: pointer;
 }
 
 
